@@ -20,14 +20,14 @@
 # 2017年11月6日23:51:34
 # http://www.runoob.com/python/python-basic-syntax.html
 # 多个语句构成代码组
-#在python里标识符由字母、数字、下划线组成、
+# 在python里标识符由字母、数字、下划线组成、
 # 在Python里，，所有标识符可以包含英文、数字以及下划线、但不能以数字开头
 # Python中的标识符是区分大小写的
 # 以下划线开头的标识符是有特殊意义的。以单下划线开头_foo的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用from xxx import *而导入
 # 以双下划线开头的__foo代表类的私有成员，
 # 以爽下划线开头和结尾的__foo__代表Python里特殊方法专用的标识，如__init__()代表类的构造函数
 # Python可以同一行显示多条语句，方法是用分号；分开，  print 'hello';print 'merbng'
-#python的保留字符，不能用作常数或变数，或任何其他标识符名称。所以Python的关键字只包含小写字母
+# python的保留字符，不能用作常数或变数，或任何其他标识符名称。所以Python的关键字只包含小写字母
 # and exec not assert finally or break for pass class from print
 # continue global raise def if return del import try elif
 # in while except lambda yidld
@@ -117,3 +117,109 @@
 
 # 2017年11月7日23:53:08
 # http://www.runoob.com/python/python-operators.html
+
+#Python算术运算符
+a = 21
+b = 10
+c = 0
+c =a+b
+print "a+b的值：",c
+c=a-b
+print "a-b的值：",c
+c=a*b
+print "a*b的值",c
+c=a/b
+print "a/b",c
+#幂 - 返回x的y次幂
+a=3
+b=2
+c=a**b
+print "a**b的值：",c
+#取整除 - 返回商的整数部分
+a=10
+b=5
+c=a//b
+print "a//b的值：",c
+#Python2.x 里，整数除整数，只能得出整数。如果:要得到小数部分，把其中一个数改成浮点数即可。
+
+#Python比较运算符
+a=10
+b=20
+print "a==b:",a==b
+print "a!=b:",a!=b
+print "a<>b:",a<>b
+print "a>b:",a>b
+print "a<b:",a<b
+print "a>=b:",a>=b
+print "a<=b:",a<=b
+if(a<b):
+    print "a<b"
+else:
+    print "a!<b"
+
+#Python赋值运算符
+a=10
+b=20
+c+=a
+print "c+=a",c# c= c+a
+c-=a
+print "c-=a",c# c= c-a
+c*=a
+print "c*=a",c
+c/=a
+print "c/=a",c
+c%=a
+print "c%=a",c
+
+#Python位运算符
+a=60
+b=13
+c=a&b
+print "a&b",c
+
+#Python逻辑运算符
+a=10
+b=20
+if(a and b):
+    print "变量a 和b 都为true"
+
+#Python成员运算符
+a=10
+b=20
+list ={1,2,3,4,5,6}
+if(a in list):
+    print "a 在给定的列表list中"
+else:
+    print "a不在list中"
+
+if(a not in list):
+    print "a不在list"
+else:
+    print "a在列表"
+
+#Python身份运算符
+#	is 是判断两个标识符是不是引用自一个对象
+a=20
+b=20
+if(a is b):
+    print "a和b有相同的标识"
+else:
+    print "a和b没有相同的标识"
+
+if( a is not b):
+    print "a和b没有相同的标识"
+else:
+    print "a和b有相同的标识"
+b=30
+if(a is b):
+    print "a和b有相同的标识"
+else:
+    print "a和b没有相同的标识"
+#is 与 == 区别：
+# is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。
+
+#2017年11月9日00:20:06
+#http://www.runoob.com/python/python-if-statement.html
+
+
+
