@@ -220,6 +220,95 @@ else:
 
 #2017年11月9日00:20:06
 #http://www.runoob.com/python/python-if-statement.html
+#Python 条件语句
+# flag =False
+# name ='luren'
+# if name=='python':
+#     flag=True
+#     print "welcome bosss"
+# else:
+#     print name
+
+# num =5
+# if num ==3:
+#     print 'boss'
+# elif num==2:
+#     print 'user'
+# elif num==1:
+#     print 'worker'
+# elif num<0:
+#     print "error"
+# else:
+#     print "roadman"
+
+# 由于 python 并不支持 switch 语句，所以多个条件判断，只能用 elif 来实现，
+# 如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；
+# 使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。
+
+num =9
+if num>=0 and num<=10:
+    print "hello"
+
+num=10
+if num<0 or num>10:
+    print 'hello'
+else:
+    print 'undfine'
+
+num =8
+if(num>=0 and num<=5)or(num>=10 and num<=15):
+    print 'hello'
+else:
+    print 'undefing'
+# 当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，
+# 此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，
+# 即大于和小于在没有括号的情况下会比与或要优先判断。
+
+var =100
+if(var==100):print '变量var的值为100'
+print 'Good bye!'
+
+# a=0
+# b=1
+# if(a>0) and(b/a>2):
+#     print 'yes'
+# else:
+#     print "no"
+# if(a>0) or(b/a>2):
+#     print '报错不执行yes2'
+# else:
+#     print "报错不执行no2"
+
+# 一个简单的条件循环语句实现汉诺塔问题
+# def my_print(args):
+#     print args
+#
+# def move(n, a, b, c):
+#     my_print ((a, '-->', c)) if n==1 else (move(n-1,a,c,b) or move(1,a,b,c) or move(n-1,b,a,c))
+#
+# move (3, 'a', 'b', 'c')
+#
+# Python 循环语句
+# 2017年11月9日23:32:23
+# http://www.runoob.com/python/python-loops.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
