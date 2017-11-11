@@ -288,27 +288,136 @@ print 'Good bye!'
 #
 # move (3, 'a', 'b', 'c')
 #
-# Python 循环语句
+
 # 2017年11月9日23:32:23
 # http://www.runoob.com/python/python-loops.html
+# Python 循环语句
+# count =2
+# while (count<9):
+#     print 'the count is',count
+#     count=count+1
+# print 'Good bye!'
 
+#continue 和 break 的用法
+# i = 1
+# while i < 10:
+#     i += 1
+#     if i % 2 > 0:  # 非双数时跳过输出
+#         continue
+#     print i  # 输出双数2、4、6、8、10
+#
+# i = 1
+# while 1:  # 循环条件为1必定成立
+#     print i  # 输出1~10
+#     i += 1
+#     if i > 10:  # 当i大于10时跳出循环
+# #         break
 
+# var =1
+# while var==1:
+#     num =raw_input('enter a number :')
+#     print 'you input :',num
+#
+# print 'good bye！'
 
+# 在 python 中，while … else 在循环条件为 false 时执行 else 语句块：
+# count =0
+# while count<5:
+#     print count,' is less than 5'
+#     count=count+1
+# else:
+#     print count,'is not less than 5'
 
+# 类似 if 语句的语法，如果你的 while 循环体中只有一条语句，你可以将该语句与while写在同一行中
+# flag =1
+# while(flag):print 'given flag is really true !'
+# print 'good bye~！'
 
+# 九九乘法表
+# i=1
+# while i:
+#     j=1
+#     while j:
+#         print j,'*',i,'=',i*j,' ',
+#         if i==j:
+#             break
+#         j+=1
+#         if j>10:
+#             break
+#
+#     print '\n'
+#     i+=1
+#     if i>=10:
+#         break
 
+# 摇筛子游戏
+# import random
+# import sys
+# import time
+#
+# result =[]
+# while True:
+#     result.append(int(random.uniform(1,7)))
+#     result.append(int(random.uniform(1,7)))
+#     result.append(int(random.uniform(1,7)))
+#     print result
+#     count=0
+#     index =2
+#     pointStr =""
+#     while index>=0:
+#         currPoint =result[index]
+#         count+=currPoint
+#         index -=1
+#         pointStr +=" "
+#         pointStr+=str(currPoint)
+#     if count<=11:
+#             sys.stdout.write(pointStr+' -> '+'小'+'\n')
+#             time.sleep(1)
+#     else:
+#             sys.stdout.write(pointStr+' ->'+'大'+'\n')
+#             time.sleep(1)
+#     result=[]
 
+# 猜拳小游戏
+# import random
+# while 1:
+#     s =int(random.randint(1,3))
+#     if s==1:
+#         ind ='石头'
+#     elif s==2:
+#         ind ='剪刀'
+#     elif s==3:
+#         ind ='布'
+#     m=raw_input('输入 石头、剪刀、布，输入"end"结束游戏：')
+#     blist=['石头','剪刀','布']
+#     if(m not in blist)and(m!='end'):
+#             print '输入错误，清重新上输入！'
+#     elif (m not in blist)and (m=='end'):
+#             print '\n游戏退出中...'
+#             break
+#     elif m==ind:
+#             print '电脑出了：'+ind+',平局！'
+#     elif (m=='石头'and ind=='剪子')or(m=='剪子'and ind =='布')or (m=='布'and ind =='石头'):
+#             print '电脑出了：'+ind+',你赢了！'
+#     elif (m=='石头'and ind =='布')or(m=='剪子'and ind =='石头')or (m=='布'and ind =='剪刀'):
+#             print '电脑出了：'+ind+'，你输了!'
 
+# 猜大小的游戏
+# import random
+# s =int(random.uniform(1,10))
+# print s
+# m=int(input('输入整数：'))
+# while m!=s:
+#     if m>s:
+#         print '大了'
+#         m=int(input('输入整数：'))
+#     if m<s:
+#             print '小了'
+#             m=int(input('输入整数：'))
+#     if m==s:
+#              print 'ok'
+#              break
 
-
-
-
-
-
-
-
-
-
-
-
-
+# 2017年11月12日01:16:12
+# Python for 循环语句
+# http://www.runoob.com/python/python-for-loop.html
