@@ -118,109 +118,109 @@
 # 2017年11月7日23:53:08
 # http://www.runoob.com/python/python-operators.html
 
-#Python算术运算符
-a = 21
-b = 10
-c = 0
-c =a+b
-print "a+b的值：",c
-c=a-b
-print "a-b的值：",c
-c=a*b
-print "a*b的值",c
-c=a/b
-print "a/b",c
-#幂 - 返回x的y次幂
-a=3
-b=2
-c=a**b
-print "a**b的值：",c
-#取整除 - 返回商的整数部分
-a=10
-b=5
-c=a//b
-print "a//b的值：",c
-#Python2.x 里，整数除整数，只能得出整数。如果:要得到小数部分，把其中一个数改成浮点数即可。
+# Python算术运算符
+# a = 21
+# b = 10
+# c = 0
+# c =a+b
+# print "a+b的值：",c
+# c=a-b
+# print "a-b的值：",c
+# c=a*b
+# print "a*b的值",c
+# c=a/b
+# print "a/b",c
+# #幂 - 返回x的y次幂
+# a=3
+# b=2
+# c=a**b
+# print "a**b的值：",c
+# #取整除 - 返回商的整数部分
+# a=10
+# b=5
+# c=a//b
+# print "a//b的值：",c
+# Python2.x 里，整数除整数，只能得出整数。如果:要得到小数部分，把其中一个数改成浮点数即可。
 
-#Python比较运算符
-a=10
-b=20
-print "a==b:",a==b
-print "a!=b:",a!=b
-print "a<>b:",a<>b
-print "a>b:",a>b
-print "a<b:",a<b
-print "a>=b:",a>=b
-print "a<=b:",a<=b
-if(a<b):
-    print "a<b"
-else:
-    print "a!<b"
+# Python比较运算符
+# a=10
+# b=20
+# print "a==b:",a==b
+# print "a!=b:",a!=b
+# print "a<>b:",a<>b
+# print "a>b:",a>b
+# print "a<b:",a<b
+# print "a>=b:",a>=b
+# print "a<=b:",a<=b
+# if(a<b):
+#     print "a<b"
+# else:
+#     print "a!<b"
 
-#Python赋值运算符
-a=10
-b=20
-c+=a
-print "c+=a",c# c= c+a
-c-=a
-print "c-=a",c# c= c-a
-c*=a
-print "c*=a",c
-c/=a
-print "c/=a",c
-c%=a
-print "c%=a",c
+# Python赋值运算符
+# a=10
+# b=20
+# c+=a
+# print "c+=a",c# c= c+a
+# c-=a
+# print "c-=a",c# c= c-a
+# c*=a
+# print "c*=a",c
+# c/=a
+# print "c/=a",c
+# c%=a
+# print "c%=a",c
+#
+# #Python位运算符
+# a=60
+# b=13
+# c=a&b
+# print "a&b",c
 
-#Python位运算符
-a=60
-b=13
-c=a&b
-print "a&b",c
+# Python逻辑运算符
+# a=10
+# b=20
+# if(a and b):
+#     print "变量a 和b 都为true"
+#
+# #Python成员运算符
+# a=10
+# b=20
+# list ={1,2,3,4,5,6}
+# if(a in list):
+#     print "a 在给定的列表list中"
+# else:
+#     print "a不在list中"
+#
+# if(a not in list):
+#     print "a不在list"
+# else:
+#     print "a在列表"
 
-#Python逻辑运算符
-a=10
-b=20
-if(a and b):
-    print "变量a 和b 都为true"
-
-#Python成员运算符
-a=10
-b=20
-list ={1,2,3,4,5,6}
-if(a in list):
-    print "a 在给定的列表list中"
-else:
-    print "a不在list中"
-
-if(a not in list):
-    print "a不在list"
-else:
-    print "a在列表"
-
-#Python身份运算符
+# Python身份运算符
 #	is 是判断两个标识符是不是引用自一个对象
-a=20
-b=20
-if(a is b):
-    print "a和b有相同的标识"
-else:
-    print "a和b没有相同的标识"
-
-if( a is not b):
-    print "a和b没有相同的标识"
-else:
-    print "a和b有相同的标识"
-b=30
-if(a is b):
-    print "a和b有相同的标识"
-else:
-    print "a和b没有相同的标识"
-#is 与 == 区别：
+# a=20
+# b=20
+# if(a is b):
+#     print "a和b有相同的标识"
+# else:
+#     print "a和b没有相同的标识"
+#
+# if( a is not b):
+#     print "a和b没有相同的标识"
+# else:
+#     print "a和b有相同的标识"
+# b=30
+# if(a is b):
+#     print "a和b有相同的标识"
+# else:
+#     print "a和b没有相同的标识"
+# is 与 == 区别：
 # is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。
 
-#2017年11月9日00:20:06
-#http://www.runoob.com/python/python-if-statement.html
-#Python 条件语句
+# 2017年11月9日00:20:06
+# http://www.runoob.com/python/python-if-statement.html
+# Python 条件语句
 # flag =False
 # name ='luren'
 # if name=='python':
@@ -244,29 +244,29 @@ else:
 # 由于 python 并不支持 switch 语句，所以多个条件判断，只能用 elif 来实现，
 # 如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；
 # 使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。
-
-num =9
-if num>=0 and num<=10:
-    print "hello"
-
-num=10
-if num<0 or num>10:
-    print 'hello'
-else:
-    print 'undfine'
-
-num =8
-if(num>=0 and num<=5)or(num>=10 and num<=15):
-    print 'hello'
-else:
-    print 'undefing'
-# 当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，
-# 此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，
-# 即大于和小于在没有括号的情况下会比与或要优先判断。
-
-var =100
-if(var==100):print '变量var的值为100'
-print 'Good bye!'
+#
+# num =9
+# if num>=0 and num<=10:
+#     print "hello"
+#
+# num=10
+# if num<0 or num>10:
+#     print 'hello'
+# else:
+#     print 'undfine'
+#
+# num =8
+# if(num>=0 and num<=5)or(num>=10 and num<=15):
+#     print 'hello'
+# else:
+#     print 'undefing'
+# # 当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，
+# # 此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，
+# # 即大于和小于在没有括号的情况下会比与或要优先判断。
+#
+# var =100
+# if(var==100):print '变量var的值为100'
+# print 'Good bye!'
 
 # a=0
 # b=1
@@ -298,7 +298,7 @@ print 'Good bye!'
 #     count=count+1
 # print 'Good bye!'
 
-#continue 和 break 的用法
+# continue 和 break 的用法
 # i = 1
 # while i < 10:
 #     i += 1
@@ -421,3 +421,60 @@ print 'Good bye!'
 # 2017年11月12日01:16:12
 # Python for 循环语句
 # http://www.runoob.com/python/python-for-loop.html
+# Python for循环可以遍历任何序列的项目，如一个列表或者一个字符串。
+# for letter in 'Python':
+#     print '当前字母：',letter
+#
+# fruits =['bananaa','apple','mango']
+# for fruit in fruits:
+#     print '当前水果：',fruit
+#
+# print 'good bye!'
+
+# 通过序列索引迭代(len() 返回列表的长度，即元素的个数。 range返回一个序列的数)
+# fruits =['banana','apple','mango']
+# for index in  range(len(fruits)):
+#     print '当前水果：',fruits[index]
+# print 'good bye!'
+
+# 循环使用 else 语句
+# for 中的语句和普通的没有区别，else 中的语句会在循环正常执行完
+# for num in range(10, 20):
+#     for i in range(2, num):
+#         if num % i == 0:
+#             j = num / i
+#             print '%d 等于 %d * %d' % (num, i, j)
+#             break
+#     else:
+#             print num, '是一个质数'
+
+# Python 循环嵌套
+# 允许在一个循环体里面嵌入另一个循环。
+
+# Python for 循环嵌套语法：
+# for iterating_var in sequence:
+#     for interating_var in sequence:
+#         statements(s)
+#     statements(s)
+
+# Python while 循环嵌套语法：
+# while expression:
+#     while expression:
+#         statements(s)
+#     statements(s)
+# 可以在循环体内嵌入其他的循环体，如在while循环中可以嵌入for循环， 反之，你可以在for循环中嵌入while循环。
+
+# 嵌套循环输出2~100之间的素数：
+# i =2
+# while (i<100):
+#     j=2
+#     while(j<=(i/j)):
+#         if not(i%j): break
+#         j=j+1
+#     if(j>i/j):print i,' 是素数'
+#     i=i+1
+# print 'good bye!'
+
+# 2017年11月12日21:49:01
+# http://www.runoob.com/python/python-strings.html
+# Python 字符串Python 字符串
