@@ -478,3 +478,62 @@
 # 2017年11月12日21:49:01
 # http://www.runoob.com/python/python-strings.html
 # Python 字符串Python 字符串
+# var1 ='Hellow WORLD!'
+# var2='Python Runoob'
+#
+# print 'var1[0]:',var1[0]
+# print 'var2[1:5]:',var2[1:5]
+
+# var1 ='Hello World!'
+# print '更新字符串：-',var1[:6]+'Runboo!'
+
+# 在需要在字符中使用特殊字符时，python用反斜杠(\)转义字符
+
+# Python 字符串格式化
+# print 'my name is %s and weight is %d kg!' %('merbng',21)
+
+# python中三引号可以将复杂的字符串进行复制:
+# hi ='''hi
+# there'''
+# hi
+# 'hi\nthere'
+# print hi
+
+# hi
+# there
+
+# Unicode 字符串
+# u'Hello World!'
+# print u'Hello world!'
+# print u'Hello\u0020world!'
+
+# Python 列表(List)
+# 访问列表中的值
+# list1 =['pytsics','cchemistor','1992',22,999]
+# list2= [1,2,3,4,5,6,7,8]
+# print 'list1[0]:',list1[0]
+# print 'list2[1:5]：',list2[1:5]
+# 更新列表
+# print 'value available at index 2:'
+# print list1[2]
+# list1[2]=2001
+# print 'new value avaliable at index 2:'
+# print list1[2]
+# # 删除列表元素
+# del list1[0]
+# print list1
+
+# 2017年11月14日00:05:02
+# Python 元组
+# http://www.runoob.com/python/python-tuples.html
+
+
+
+
+
+
+
+
+
+
+
