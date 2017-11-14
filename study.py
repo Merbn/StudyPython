@@ -639,8 +639,8 @@
 # dict.get(key,default =None) 返回指定键的值，如果值不存在字典中返回default值
 # dict.has_key(key)如果键在字典dict里返回true，否则返回false
 # dict.items()以列表返回可遍历的（键，值）元组数组
-dict ={'Name':'Mebng','Age':9}
-dict2 ={'Name':'xx','Age':9}
+# dict ={'Name':'Mebng','Age':9}
+# dict2 ={'Name':'xx','Age':9}
 # print dict.items();
 # print dict.has_key('Name')
 # print dict.get('Name','Mmm')
@@ -654,3 +654,192 @@ dict2 ={'Name':'xx','Age':9}
 # Python 日期和时间
 # 2017-11-14 14:49:59
 # http://www.runoob.com/python/python-date-time.html
+
+# import time
+# ticcks =time.time()
+# print '当前时间戳喂：',ticcks#时间间隔是以秒为单位的浮点小数。
+#序号	 属性	         值
+# 0	  tm_year	        2008
+# 1	  tm_mon	        1 到12
+# 2	  tm_mday	        1 到31
+# 3	  tm_hour	        0 到23
+# 4	  tm_min	        0 到59
+# 5	  tm_sec	        0 到61 (60或61 是闰秒)
+# 6	  tm_wday	        0到6(0是周一)
+# 7	  tm_yday	        1 到366(儒略历)
+# 8	  tm_isdst        	-1, 0, 1, -1是决定是否为夏令时的旗帜
+# localtime =time.localtime(time.time())
+# print '本地时间喂：',localtime
+
+# 获取格式化的时间
+# localtime =time.asctime(time.localtime(time.time()))
+# print '本地时间为：',localtime
+
+# 格式化日期
+# 格式化成2016-03-20 11:45:39形式
+# print time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+
+# 格式化成Sat Mar 28 22:24:24 2016形式
+# print time.strftime("%a %b %d %H:%M:%S %Y",time.localtime())
+
+# 将格式字符串转换为时间戳
+# a= "Sat Mar 22 22:22:22 2015"
+# print time.mktime(time.strptime(a,"%a %b %d %H:%M:%S %Y"))
+
+# python中时间日期格式化符号：
+# %y 两位数的年份表示（00-99）
+# %Y 四位数的年份表示（000-9999）
+# %m 月份（01-12）
+# %d 月内中的一天（0-31）
+# %H 24小时制小时数（0-23）
+# %I 12小时制小时数（01-12）
+# %M 分钟数（00=59）
+# %S 秒（00-59）
+# %a 本地简化星期名称
+# %A 本地完整星期名称
+# %b 本地简化的月份名称
+# %B 本地完整的月份名称
+# %c 本地相应的日期表示和时间表示
+# %j 年内的一天（001-366）
+# %p 本地A.M.或P.M.的等价符
+# %U 一年中的星期数（00-53）星期天为星期的开始
+# %w 星期（0-6），星期天为星期的开始
+# %W 一年中的星期数（00-53）星期一为星期的开始
+# %x 本地相应的日期表示
+# %X 本地相应的时间表示
+# %Z 当前时区的名称
+# %% %号本身
+
+# 打印某月的月历
+# import calendar
+# cal =calendar.month(2015,1)
+# print "以下输出2015年1月份的日历："
+# print cal
+
+# Time模块
+# 日历（Calendar）模块
+# 星期一是默认的每周第一天，星期天是默认的最后一天。
+
+# 使用datetime模块来获取当前的日期和时间
+# import datetime
+#
+# i =datetime.datetime.now()
+# print ("当前的日期和时间是 %s"%i)
+# print ("ISO格式的日期和时间是%s"%i.isoformat())
+# print ("当前的年费是%s"%i.year)
+# print ("当年的月份是%s"%i.month)
+# print ("当前的日期是 %s"%i.day)
+# print ("dd/mm/yyyy 格式是 %s/%s/%s"%(i.day,i.month,i.year))
+# print ("当前小时是：%s"%i.hour)
+# print ("当前分钟是：%s"%i.minute)
+# print ("当前秒是： %s"%i.second)
+
+# Python函数
+# 语法
+# def functionname(parameters):
+#     "函数_文档字符串"
+#     function_suite
+#     return [expression]
+# 参数值和参数名称是按函数声明中定义的的顺序匹配起来的。
+
+# def printme(str):
+#     "打印传入字符串到标准显示设备上"
+#     print str
+#     return
+# printme("我要调用用户自定义函数")
+# printme("再次调用同一个函数")
+
+# python传不可变对象
+# def ChangeInt (a):
+#     a=10
+#     return
+#
+# b=2
+# ChangeInt(b)
+# print b;
+#
+# # 传可变对象
+# def changeme(mylist):
+#     "修改传入的列表"
+#     mylist.append([1,2,4,3,4])
+#     print "函数内取值：",mylist
+#     return
+#
+# mylist =[10,20,30]
+# changeme(mylist)
+# print "函数外取值:",mylist
+
+#关键字参数
+# def printme(str):
+#     "打印任何传入的字符串"
+#     print str;
+#     return ;
+#
+# printme(str ="my string !")
+
+# def printinfo(name ,age ):
+#     "打印任何传入的字符串"
+#     print "Name",name
+#     print "Age",age
+#     return ;
+# printinfo(age =8,name ="hhahh")#关键字参数顺序不重要
+
+# 缺省参数
+# def printinfo(name,age= 355):
+#     "打印任何传入的字符串"
+#     print "name:",name
+#     print "age",age
+#     return
+#
+# printinfo("merbng",age =10);
+# printinfo("Mbv")
+#
+# # 不定长参数
+# def printinfo(arg1,*vartuple):
+#     "打印任何传入的参数"
+#     print "输出："
+#     print arg1
+#     for var  in vartuple:
+#         print var
+#     return
+# printinfo(10,20)
+# printinfo(3,12,4,5,6)
+
+# 匿名函数
+# Python使用lambda来创建匿名函数
+sum =lambda arg1,arg2:arg1+arg2;
+print "相加后的值喂：",sum(10,20)
+print "相加后的值为：",sum(20,33)
+
+# def sum(arg1,arg2):
+#     "返回两个参数的和"
+#     total =arg1+arg2
+#     print "函数内：",total
+#     return total
+# total =sum(10,20)
+
+# 全局变量、局部变量
+# total =0;#这是一个全局变量
+# def sum(arg1,arg2):
+#     total=arg1+arg2;#total在这里是局部变量
+#     print "函数内是局部变量：",total
+#     return total;
+# sum(10,30)
+# print "函数外是全局变量:",total
+
+# 全局变量想作用于函数内，需加 global
+# globvar =0
+# def set_globvvar_to_one():
+#     global globvar
+#     globvar =1
+#
+# def print_globvar():
+#     print (globvar)
+#
+# set_globvvar_to_one()
+# print globvar
+# print_globvar()
+
+# 2017-11-14 22:57:14
+# Python 模块
+# http://www.runoob.com/python/python-modules.html
