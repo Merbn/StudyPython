@@ -526,14 +526,131 @@
 # 2017年11月14日00:05:02
 # Python 元组
 # http://www.runoob.com/python/python-tuples.html
+# Python的元组与列表类似，不同之处在于元组的元素不能修改。
+
+# tup1 =(50,)#元组中只包含一个元素时，需要在元素后面添加逗号
+# 元组与字符串类似，下标索引从0开始，可以进行截取，组合
+# 元组可以使用下标索引来访问元组中的值
+# tup1=('phthone','chemistory',1997,2999)
+# tup2 =(1,2,3,4,5,6,7);
+# print 'tup1[0]:',tup1[0]
+# print 'tup2[1:5]:',tup2[1:5]
+
+# 修改元组
+# 元组中的元素值是不允许修改的，但我们可以对元组进行连接组合
+# tup1=(12,34.56)
+# tup2=('abc','xyz')
+# tup3 =tup1+tup2
+# print tup3
+
+# 删除元组
+# 元组中的元素值是不允许删除的，但我们可以使用del语句来删除整个元组
+# tup =('pythons','chemisotry',1997,2000)
+# print tup;
+# del tup;
+# print 'after deleting tup :'
+# print tup
+
+# 元组运算符
+# 与字符串一样，元组之间可以使用 + 号和 * 号进行运算。这就意味着他们可以组合和复制，运算后会生成一个新的元组。
+
+# 元组索引，截取
+# 因为元组也是一个序列，所以我们可以访问元组中的制定位置的元素，也可以截取索引中的一段元素，
+# L =('spam','Spam','SPAM!')
+# print L[2]   读取第三个元素
+# print L[-2]  反向读取；读取倒数第二个元素
+# print L[1:] 截取元素
+
+# 无关闭分隔符
+# 任何无符号的对象，以逗号隔开，默认为元组
+# print 'abc',-4.233,18+65.6j,'xyz';
+# x,y =1,2;
+# print 'valuse of x ,y :',x,y
+
+# 元组内置函数
+# cmp(tuple1,tuple2) 比较两个元组元素
+# len(tuple) 计算元组元素个数
+# max(tuple) 返回元组中元素最大值
+# min（tuple) 返回元组中元素最小值
+# tuple(seq) 将列表转换为元组
+
+# Python字典（Dictionary）
+# 字典是另一种可变容器模型，且可存储任意类型对象
+# 字典的每个键值（key =》value）对用冒号（：）分割，每个对之间用逗号（，）分割，
+# 整个字典包括在花括号({})中
+# d={key1:value1,key2:value2}
+# 键必须是唯一的，但值则不必
+# 值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组
+# dict = {'Alice': '1234', 'Bech': '918', 'Cecil': '3258'}
+# dict1 = {'abc': 456}
+# dict2 = {'abc': 123, 98.6: 37}
+
+# 访问字典里的值
+# 把相应的键放入熟悉的放括弧
+# dict= {'Name':'Zara','Age':7,'Class':'First'}
+# print "dict['Name]:",dict['Name'];
+# print "dict['Age']:",dict['Age'];
+
+# 如果用字典里没有的键访问数据，会输出错误
+# print "dict['xx']",dict['xyz']
+
+# 修改字典
+# 向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对，
+# dict = {'Name': 'Zare', 'Age': 7, 'Class': 'First'}
+# dict['Name'] = 'Merbng'
+# dict['Age'] = 8;
+# dict['School'] = 'DPS School'
+# print "dict['Name']:", dict['Name']
+# print "dict['School']:", dict['School']
+# print dict
+
+# 删除字典元素
+# 能删单一的元素也能清空字典，清空只需一项操作
+# 显示删除一个字典用del命令
+# dict ={'Name':'Merbng','Age':8,'Class':'First'}
+# del  dict['Name']
+# dict.clear();
+# del dict;
+# print "dict['Age']",dict['Age']
+# print "dict['School']:",dict['School']
+
+# 字典键的特性
+# 字典值可以没有限制的取任何Python对象，既可以是标准的对象，也可以是用户定义的，但键不行，
+# 两个重要的点要记住：
+# 1.不允许同一个键出现两次，创建时如果一个键被赋值两次，后一个值会被记住，
+# dict ={'Name':'Mebng','Age':9,'Name':'Manni'}
+# print dict
+# print dict['Name']
+# 2.键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行
+# dict ={['Name']:'Zera','Age':7}#运行报错
+# print dict
+# print "dict['Name']:",dict['Name']
+
+# 字典内置函数&方法
+# cmp(dict1,dict2) 比较两个字典元素
+# len(dict) 计算字典元素个数，即键的总数
+# str(dict) 输出字典可打印的字符串表示
+# type(variable) 返回输入的变量类型，如果变量是字典就返回字典类型
+
+# Python字典包含了以下内置方法：
+# dict.ckear()删除字典内所有元素
+#dict.copy() 返回一个字典的浅复制
+# dict.fromkeys(seq[, val]) 创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
+# dict.get(key,default =None) 返回指定键的值，如果值不存在字典中返回default值
+# dict.has_key(key)如果键在字典dict里返回true，否则返回false
+# dict.items()以列表返回可遍历的（键，值）元组数组
+dict ={'Name':'Mebng','Age':9}
+dict2 ={'Name':'xx','Age':9}
+# print dict.items();
+# print dict.has_key('Name')
+# print dict.get('Name','Mmm')
+# print dict.keys()#以列表返回一个字典所有的键
+# print dict.update(dict2) 把字典dict2的键/值对更新到dict里
+# print dict.values() 以列表返回字典中的所有值
+# print dict.pop('Name','vvv')删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
+# print dict.popitem()随机返回并删除字典中的一对键和值。
 
 
-
-
-
-
-
-
-
-
-
+# Python 日期和时间
+# 2017-11-14 14:49:59
+# http://www.runoob.com/python/python-date-time.html
