@@ -807,9 +807,9 @@
 
 # 匿名函数
 # Python使用lambda来创建匿名函数
-sum =lambda arg1,arg2:arg1+arg2;
-print "相加后的值喂：",sum(10,20)
-print "相加后的值为：",sum(20,33)
+# sum =lambda arg1,arg2:arg1+arg2;
+# print "相加后的值喂：",sum(10,20)
+# print "相加后的值为：",sum(20,33)
 
 # def sum(arg1,arg2):
 #     "返回两个参数的和"
@@ -843,3 +843,123 @@ print "相加后的值为：",sum(20,33)
 # 2017-11-14 22:57:14
 # Python 模块
 # http://www.runoob.com/python/python-modules.html
+
+# 命名空间和作用域
+# 一个Python表达式可以访问局部命名空间和全局命名空间里的变量，
+# 如果一个局部变量和一个全局变量重名，则局部变量会覆盖全局变量
+# 如果要给函数内的全部局部变量赋值，必须使用global语句
+#
+# Money=2000
+# def AddMoney():
+#     global Money
+#     Money=Money+1
+#
+# print Money
+# AddMoney()
+# print Money
+
+# dir()函数 一个排好序的字符串列表，内容是一个模块来定义过的名字
+# 返回的列表容纳了模块里定义的所有的模块，变量和函数
+# import math
+# content =dir(math)
+# print content
+
+# globals()和locals()函数
+# 根据调用地方不同，globals（）和locals（）函数可被用来返回全局和局部命名空间里的名字，
+# 如果在函数内部调用locals（），返回的是所有能在该函数里访问的命名。
+#如果在函数内部调用globasl（），返回的是所有在该函数里能访问的全局名字
+# 两个函数的返回类型都是字典，所以名字们能用keys（）函数摘取
+
+# reload（）函数
+# 如果一个模块被导入到一个脚本，模块顶层部分的代码只会被执行一次，
+# 因此，如果你想要重新执行模块里顶层部分的代码，可以用reload()函数，
+# 该函数会重新导入之前导入过的模块
+
+# from package_runoob.runoob1 import runoob1
+# from package_runoob.runoob2 import runoob2
+# runoob1()
+# runoob2()
+
+# Python文件I/O
+# 打印到屏幕
+# print "Python是一个非常棒的语言，不是吗？？"
+
+# 读取键盘输入
+# raw_input([prompt]) 函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）：
+# str =raw_input("请输入：");
+# print "你输入的内容是：",str
+
+# input函数
+# input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 可以接收一个Python表达式作为输入，并将运算结果返回。
+# str =input("请输入：")     #[x*5 for x in range(2,10,2)]
+# print "你输入的内容是：",str
+
+# 打开和关闭文件
+# 你必须先用Python内置的open()函数打开一个文件，创建一个file对象，相关的方法才可以调用它进行读写
+# file object =open(file_name[,access_mode][,buffering])
+#
+# file_name：file_name变量是一个包含了你要访问的文件名称的字符串值。
+# access_mode：access_mode决定了打开文件的模式：只读，写入，追加等。所有可取值见如下的完全列表。这个参数是非强制的，默认文件访问模式为只读(r)。
+# buffering:如果buffering的值被设为0，就不会有寄存。如果buffering的值取1，访问文件时会寄存行。
+# 如果将buffering的值设为大于1的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。
+fo =open("foo.txt","wb")
+print "文件名：",fo.name
+print "是否已关闭:",fo.closed
+print "访问模式：",fo.mode
+print "末尾是否强制加空格：",fo.softspace
+fo.close()
+
+# write()方法 可将任何字符串写入一个打开的文件。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。
+# fileObject.write(string)
+
+# fo =open("foo.txt","wb")  #以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+# fo.write("www.runoob.com! \n good site!\n")
+# fo.close()
+#
+# # read()方法  从一个打开的文件中读取一个字符串。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。
+# fo =open("foo.txt","r+") #打开一个文件用于读写。文件指针将会放在文件的开头。
+# str =fo.read(10)
+# print "读取的字符串是：",str
+# fo.close()
+#
+# # 文件定位
+# fo   = open("foo.txt","r+")
+# str =fo.read(10)
+# print "读取的字符串是：",str
+#
+# # 查找当前位置
+# position =fo.tell()
+# print "当前文件位置：",position
+#
+# # 把指针再次重新定位到文件开头
+# position =fo.seek(0,0)
+# str =fo.read(10)
+# print "重新读取字符串：",str
+# # 关闭打开的文件
+# fo.close()
+
+# 重命名和删除文件
+# Python的os模块提供了执行文件处理操作的方法，比如重命名和删除文件
+import  os
+# os.rename("foo2.txt","foo2.txt")
+# os.remove("foo2.txt")
+
+# Python里的目录：
+# 可以使用os模块的mkdir()方法在当前目录下创建新的目录们。你需要提供一个包含了要创建的目录名称的参数。
+import os
+# os.mkdir("test")
+
+# chdir()方法
+# 可以用chdir()方法来改变当前的目录。chdir()方法需要的一个参数是你想设成当前目录的目录名称。
+# # 将当前目录改为"/home/newdir"
+# os.chdir("/home/newdir")
+# getcwd()方法显示当前的工作目录。
+# print os.getcwd()
+
+# rmdir()方法删除目录，目录名称以参数传递。
+# 在删除这个目录之前，它的所有内容应该先被清除。
+# os.rmdir('dirname')
+
+# Python File(文件) 方法
+# 2017-11-15 23:04:27
+# http://www.runoob.com/python/file-methods.html
