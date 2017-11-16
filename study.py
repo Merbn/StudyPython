@@ -634,7 +634,7 @@
 
 # Python字典包含了以下内置方法：
 # dict.ckear()删除字典内所有元素
-#dict.copy() 返回一个字典的浅复制
+# dict.copy() 返回一个字典的浅复制
 # dict.fromkeys(seq[, val]) 创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
 # dict.get(key,default =None) 返回指定键的值，如果值不存在字典中返回default值
 # dict.has_key(key)如果键在字典dict里返回true，否则返回false
@@ -658,7 +658,7 @@
 # import time
 # ticcks =time.time()
 # print '当前时间戳喂：',ticcks#时间间隔是以秒为单位的浮点小数。
-#序号	 属性	         值
+# 序号	 属性	         值
 # 0	  tm_year	        2008
 # 1	  tm_mon	        1 到12
 # 2	  tm_mday	        1 到31
@@ -769,7 +769,7 @@
 # changeme(mylist)
 # print "函数外取值:",mylist
 
-#关键字参数
+# 关键字参数
 # def printme(str):
 #     "打印任何传入的字符串"
 #     print str;
@@ -867,7 +867,7 @@
 # globals()和locals()函数
 # 根据调用地方不同，globals（）和locals（）函数可被用来返回全局和局部命名空间里的名字，
 # 如果在函数内部调用locals（），返回的是所有能在该函数里访问的命名。
-#如果在函数内部调用globasl（），返回的是所有在该函数里能访问的全局名字
+# 如果在函数内部调用globasl（），返回的是所有在该函数里能访问的全局名字
 # 两个函数的返回类型都是字典，所以名字们能用keys（）函数摘取
 
 # reload（）函数
@@ -902,12 +902,12 @@
 # access_mode：access_mode决定了打开文件的模式：只读，写入，追加等。所有可取值见如下的完全列表。这个参数是非强制的，默认文件访问模式为只读(r)。
 # buffering:如果buffering的值被设为0，就不会有寄存。如果buffering的值取1，访问文件时会寄存行。
 # 如果将buffering的值设为大于1的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。
-fo =open("foo.txt","wb")
-print "文件名：",fo.name
-print "是否已关闭:",fo.closed
-print "访问模式：",fo.mode
-print "末尾是否强制加空格：",fo.softspace
-fo.close()
+# fo =open("foo.txt","wb")
+# print "文件名：",fo.name
+# print "是否已关闭:",fo.closed
+# print "访问模式：",fo.mode
+# print "末尾是否强制加空格：",fo.softspace
+# fo.close()
 
 # write()方法 可将任何字符串写入一个打开的文件。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。
 # fileObject.write(string)
@@ -940,13 +940,15 @@ fo.close()
 
 # 重命名和删除文件
 # Python的os模块提供了执行文件处理操作的方法，比如重命名和删除文件
-import  os
+import os
 # os.rename("foo2.txt","foo2.txt")
 # os.remove("foo2.txt")
 
 # Python里的目录：
 # 可以使用os模块的mkdir()方法在当前目录下创建新的目录们。你需要提供一个包含了要创建的目录名称的参数。
 import os
+
+
 # os.mkdir("test")
 
 # chdir()方法
@@ -963,3 +965,178 @@ import os
 # Python File(文件) 方法
 # 2017-11-15 23:04:27
 # http://www.runoob.com/python/file-methods.html
+
+# file对象常用的函数
+# file.close()
+# file.flush() 刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件，而不是被动的等待输出缓冲区写入
+# file.fileno() 返回一个整型的文件描述符，可以用在如os模块的read（）方法等一些底层操作上
+# file.isatty() 如果文件连接到一个终端设备返回True,否则返回False
+# file.next()返回文件下一行
+# file.read([size]) 从文件读取指定的字节数，如果未给定或负值则读取所有
+# file.readline([size]) 读取整行，包括“\n”字符
+# file.readlines([sizeint]) 读取所有行并返回列表，若给定sizeint>0,则是设置一次读多少字节，这是为了减轻读取压力
+# file.seek(offset[,whence]) 设置文件当前位置
+# file.tell() 返回文件当前位置
+# file.truncate([size]) 截取文件，截取的字节通过size指定，默认为当前文件位置
+# file.write(str) 将字符串写入文件，没有返回值
+# file.writelines(sequence) 向文件写入一个序列字符串列表，如果需要换行则自己加入每行的换行符。
+
+
+# 在write内容后，直接read文件输出会为空，是因为指针已经在内容末尾
+# 两种解决方式，其一，先close文件，open后再读取，其二，可以设置指针回到文件最初后再read
+# import os
+# document =open("test.txt","w+")
+# print "文件名：",document.name;
+# document.write("这是我创建的第一个测试文件！\nwelcome!")
+# print document.tell();
+# # 输出当前指针位置
+# document.seek(os.SEEK_SET)
+# # 设置指针回到文件最初
+# context =document.read();
+# print context;
+# document.close();
+
+# Python异常处理
+# 提供了两个非常重要的功能来处理Python程序在运行中出现的异常和粗无
+# 异常处理
+# Assertions
+
+# Python异常标准
+# BaseException 所有异常的基类
+# SystemExit 解释器请求退出
+# KeyboardInterrupt 用户中断执行
+# Exception 常规错误的基类
+# StopIteration 迭代器没有更多的值
+# GeneratorExit 生成器（generator）发生异常来通知退出
+# StandardError 所有的内建标准异常的基类
+# ArithmeticError  所有数值计算错误的基类
+# FloatingPointError 浮点计算错误
+# OverflowError 数值运算超出最大限制
+# ZeroDivisionError 除（或取模）零（所有数据类型）
+# AssertionError 断言语句失败
+# EOFError 没有内建输入，到达EOF标记
+# EnvironmentError 操作系统错误的基类
+# IOError 输入/输出操作失败
+# OSError 操作系统错误
+# WindowsError 系统调用失败
+# ImportError 导入模块/对象 失败
+# LookupError 无效数据查询的基类
+# IndexError 序列中没有此索引（index）
+# KeyError 映射中没有这个键
+# MemoryError 内存溢出错误（对于Python解释器不是致命的）
+# NameError 未声明/初始化对象（没有属性）
+# UnboundLocalError 访问未初始化的本地变量
+# ReferenceError 弱引用（Weak reference）试图访问已经垃圾回收了的对象
+# RuntimeError 一般的运行时错误
+# NotImplementedError 尚未实现的方法
+# SyntaxError Python语法错误
+# IndenationError 缩进错误
+# TabError Tab和空格混用
+# SystemError 一般的解释器系统错误
+# TypeError 对类型无效的操作
+# ValueError 传入无效的参数
+# UnicodeError Unicode相关的错误
+# UnicodeDecodeError Unicode解码时的错误
+# UnicodeEncodeError Unicode编码时的错误
+# UnicodeTranslateError Unicode转换时的错误
+# Warning 警告的基类
+# DeprecationWarning 关于被弃用的特征的警告
+# FutureWarning 关于构造将来语义会有改变的警告
+# PendingDeprecationWaring 旧的关于自动提升为长整型（long）的警告
+# RuntimeWarning 可疑的运行时行为（runtime behavior）的警告
+# SyntaxWarning 可疑的语法的警告
+# UserWarning 用户代码生成的警告
+# 当Python脚本发生异常时我们需要捕获处理它，否则程序会终止执行。
+
+# 异常处理
+# 捕捉异常可以使用try/except语句。
+# ry/except语句用来检测try语句块中的错误，从而让except语句捕获异常信息并处理。
+
+# try:
+#     fh =open("testfile","w");
+#     fh.write("这是一个测试文件，用于测试异常！");
+# except IOError:
+#     print "Error：么有找到文件或读取文件失败"
+# else:
+#     print "内容写入文件成功"
+#     fh.close()
+
+# try:
+#     fh = open("testfile", "w");
+#     fh.write("这是一个测试文件，用于异常测试！！");
+# except IOError:
+#     print "Error :没有找到文件或读取文件失败！"
+# else:
+#     print "内容写入成功"
+#     fh.close();
+
+
+# 使用except而不带任何异常类型
+# try:
+#     正常的操作
+#    ......................
+# except:
+#     发生异常，执行这块代码
+#    ......................
+# else:
+#     如果没有异常执行这块代码
+
+# 使用except而带多种异常类型
+# 你也可以使用相同的except语句来处理多个异常信息，如下所示：
+# try:
+#     正常的操作
+#    ......................
+# except(Exception1[, Exception2[,...ExceptionN]]]):
+#    发生以上多个异常中的一个，执行这块代码
+#    ......................
+# else:
+#     如果没有异常执行这块代码
+
+# try-finally 语句
+# try:
+#     fh =open("testfile","w")
+#     fh.write("这是一个测试")
+# finally:
+#     print "Error：没有找到文件或读取文件失败"
+
+# 异常的参数
+# def temp_convert(var):
+#     try:
+#         return int(var)
+#     except ValueError, Argument:
+#         print "参数没有包含数字\n", Argument
+# temp_convert("xyz")
+
+# 触发异常
+# 可以使用raise语句自己触发异常
+# raise[Exception[,args[,traceback]]]
+# 语句中Exception是异常的类型（例如，NameError）参数是一个异常参数值。该参数是可选的，如果不提供，异常的参数是"None"。
+# 最后一个参数是可选的（在实践中很少使用），如果存在，是跟踪异常对象。
+
+
+
+# 触发异常
+# http://www.runoob.com/python/python-exceptions.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
