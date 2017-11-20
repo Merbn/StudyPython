@@ -1329,17 +1329,75 @@ import os
 # 2017-11-18 21:07:51
 # http://www.runoob.com/python/python-reg-expressions.html
 
+# re.search方法，扫描整个字符串并返回第一个成功的匹配
+# re.search(pattern,string,flags=0)  匹配成功re.search方法返回一个匹配的对象，否则返回None。
 
+import re
+# print (re.match('www',"www.baidu.com").span())#在起始位置匹配
+# print (re.match('com',"www.baidu.com"))#不在起始位置匹配
+# (0, 3)
+# None
 
+# line= "Cats are smarter than dogs"
+# matchObj = re.match( r'(.*) are (.*?) .*', line, re.M|re.I)
+# if matchObj:
+#     print "matchObj.group():",matchObj.group()
+#     print "matchObj.group(1):",matchObj.group(1)
+#     print "matchObj.group(2):",matchObj.group(2)
+# else:
+#     print "No match!"
 
+# re.match()与re.search()的区别
+# re.match()只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None
+# re.search()匹配整个字符串，知道找到一个匹配
 
+# line ="Cats are smarter than dogs"
+# matchObj =re.match(r'dogs',line,re.M|re.I)
+# if matchObj:
+#     print "match--->matchObj.group():",matchObj.group()
+# else:
+#     print "No match！"
+# matchObj =re.search(r'dogs',line,re.M|re.I)
+# if  matchObj:
+#     print "search-->matchObj.group():",matchObj.group()
+# else:
+#     print "No match!"
 
+# 检索和替换
+# Python的re模块提供了re.sub用于替换字符串中的匹配项
+# pattenr：正则中的模式字符串
+# repl：替换的字符串，也可为一个函数
+# string要被查找替换的原始字符串
+# count 模式匹配后替换的最大次数，默认0表示替换所有的匹配
+# re.sub(pattern,repl,string,count,flags)
 
+# phone ="2004-323-234"#这是一个国外电话号码
+# # 删除字符串中的Python注释
+# num =re.sub(r'#.*$',"",phone)
+# print "电话号码是：",num
+# # 删除非数字（-）的字符串
+# num= re.sub(r'\D',"",phone)
+# print "电话号码是：",num
 
+# repl参数是一个函数
+# 以下实例中将字符串中的匹配的数字乘于 2：
+# def double(matched):
+#     value = int(matched.group('value'))
+#     return str(value*2)
+#
+# s='A23G4HFD567'
+# print (re.sub('(?P<value>\d+)',double,s))
 
+# 正则表达式修饰符-可选标志
+# re.I :使匹配对大小写敏感
+# re.L: 做本地化识别（locale-aware）匹配
+# re.M :多行匹配，影响^和$
+# re.S :使.匹配包括换行在内的所有字符
+# re.U :根据Unicode字符集解析字符，这个标志影响\w,\W,\b,\B
+# re.X  :该标识通过给予你更灵活的格式以便你将正则表达式写的更易于理解
 
+# 正则表达式模式
 
-
-
+# Python CGI编程
 
 
