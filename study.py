@@ -1112,27 +1112,87 @@ import os
 # raise[Exception[,args[,traceback]]]
 # 语句中Exception是异常的类型（例如，NameError）参数是一个异常参数值。该参数是可选的，如果不提供，异常的参数是"None"。
 # 最后一个参数是可选的（在实践中很少使用），如果存在，是跟踪异常对象。
+#
+# def functionName(level):
+#     if level<1:
+#         raise Exception("Invalid level!",level)
+# #     触发异常后，后面的代码就不会执行
+#
+# def mye(level):
+#     if level<1:
+#         raise Exception("Invalid level!",level)
+#
+#
+# try:
+#     mye(0);
+# except "Invalid level!":
+#     print 1
+# else:
+#     print 2
+
+# 用户自定义异常
+# class Networkerror(RuntimeError):
+#     def __init__(self, arg):
+#         self.args = arg
+#
+# try:
+#     raise Networkerror("Bad hostname")
+# except Networkerror,e:
+#     print e.args
+
+# 0作除数
+# try:
+#     1/0
+# except Exception as e:
+#     '''异常的父类，可以捕获所有的异常'''
+#     print "0不能被除"
+# else:
+#     '''保护不抛出异常的代码'''
+#     print "没有异常"
+# finally:
+#     print "最后总是要执行我"
 
 
+# class Vector:
+#     def __init__(self,a,b):
+#
+#         self.a=a
+#         self.b=b
+#
+#     def __str__(self):
+#         return "Vector (%d,%d)"%(self.a,self.b)
+#
+#     def __add__(self, other):
+#         return Vector(self.a+other.a,self.b+other.b)
+#
+# v1 =Vector(2,10)
+# v2 =Vector(5,-2)
+# print v1+v2
 
-# 触发异常
-# http://www.runoob.com/python/python-exceptions.html
 
-class Vector:
-    def __init__(self,a,b):
+# Python os文件/目录方法
+# os 模块提供了非常丰富的方法用来处理文件和目录
 
-        self.a=a
-        self.b=b
+# os.access(path,mode) 检验权限模式
+# os.chdir(path) 改变工作目录
+# os.chflags(path,flags) 设置路径标记为数字标记
+# os.chmod(path,mode) 更改权限
+# os.chown(path) 更改文件所有者
+# os.chroot(path) 改变当前进程的根目录
+# os.close(fd) 关闭文件描述符fd
 
-    def __str__(self):
-        return "Vector (%d,%d)"%(self.a,self.b)
+# Python内置函数
 
-    def __add__(self, other):
-        return Vector(self.a+other.a,self.b+other.b)
-
-v1 =Vector(2,10)
-v2 =Vector(5,-2)
-print v1+v2
+# Python面向对象
+# 类(Class)：用来描述具有相同属性和方法的对象的集合，他定义了该集合中每个对象所共有的属性和方法，对象是类的实例
+# 类变量：类变量是在整个实例化的对象中是公用的，类变量定义在类中且在函数体之外，类变量通常不作为实例变量使用，
+# 数据成员：类变量或者实例变量用于处理类及其实例对象的相关的数据
+# 方法重写：如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override）也叫做方法的重写
+# 实例变量：定义在方法中的变量，只作用于当前实例的类
+# 继承：即一个派生类，继承基类的字段和方法，继承也允许把一个派生类的对象作为一个基类对象对待，
+# 实例化：创建一个类的实例，类的具体对象
+# 方法：类中定义的函数
+# 对象：通过类定义的数据结构实例，对象包括两个数据成员（类变量和实例变量）和方法
 
 # 类属性与方法
 # 类的私有属性
@@ -1142,29 +1202,202 @@ print v1+v2
 # 在类的内部，使用def关键字可以为类定义一个方法，与一般函数定义不同，不能在类的外部调用，在类的
 # 内部调用self.__private_methods
 #
-class JustCounter:
-    __secretCount =0#私有变量
-    publicCount =0#公开变量
+# class JustCounter:
+#     __secretCount =0#私有变量
+#     publicCount =0#公开变量
+#
+#     def count(self):
+#         self.__secretCount+=1
+#         self.publicCount+=1
+#         print self.__secretCount
+#
+# counter =JustCounter()
+# counter.count()
+# counter.count()
+# print counter.publicCount
+# # print counter.__secretCount#报错。不能访问私有变量
+# # print counter._JustCounter__secretCount
+#
+# # 单下划线、双下划线、头尾双下划线说明：
+# # __foo__：定义的是特殊方法，一般是系统定义名字，类似__init()__之类的
+# # _foo：以单下划线开头表示protected类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于from module import*
+# # __foo:双下划线的表示的是私有类型（private）的变量，只能是允许这个类本身进行访问了
 
-    def count(self):
-        self.__secretCount+=1
-        self.publicCount+=1
-        print self.__secretCount
+# 创建类
+# class ClassName:
+#     '类的帮助信息'   #类文档字符串
+#     class_suite      #类体
 
-counter =JustCounter()
-counter.count()
-counter.count()
-print counter.publicCount
-# print counter.__secretCount#报错。不能访问私有变量
-# print counter._JustCounter__secretCount
+# class Employee:
+#     '所有员工的基类'
+#     empCount = 0
+#
+#     def __init__(self, name, salary):
+#         self.name = name
+#         self.salary = salary
+#         Employee.empCount += 1
+#
+#     def displayCount(self):
+#         print "Total Employee %d" % Employee.empCount
+#
+#     def displayEmployee(self):
+#         print "Name:", self.name, ",salary:", self.salary
 
-# 单下划线、双下划线、头尾双下划线说明：
-# __foo__：定义的是特殊方法，一般是系统定义名字，类似__init()__之类的
-# _foo：以单下划线开头表示protected类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于from module import*
-# __foo:双下划线的表示的是私有类型（private）的变量，只能是允许这个类本身进行访问了
+# self代表类的实例，而非类
+# 类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self。
+# class Test:
+#     def prt(self):
+#         print (self)
+#         print (self.__class__)
+#
+# t =Test();
+# t.prt()
+
+# 创建实例对象
+# 实例化类其他编程语言中一般用关键字 new，但是在 Python 中并没有这个关键字，类的实例化类似函数调用方式。
+# 以下使用类的名称 Employee 来实例化，并通过 __init__ 方法接受参数。
+# "创建 Employee 类的第一个对象"
+# emp1 =Employee("Zara",2000)
+# "创建 Employee 类的第二个对象"
+# emp2 =Employee("Manni",5000)
+
+# 访问属性
+# emp1.displayEmployee()
+# emp2.displayEmployee()
+# print "Total Employee %d "%Employee.empCount
+# 完整实例：
+# class Employee:
+#     empCount =0
+#     def __init__(self,name,salary):
+#         self.name=name
+#         self.salary =salary
+#         Employee.empCount+=1
+#
+#     def displayCount(self):
+#         print "Total employee %d"%Employee.empCount
+#     def displayEmployee(self):
+#         print "Name:"+self.name,",Salary",self.salary
+#
+# "创建employee第一个对象"
+# emp1 =Employee("zero",299)
+# emp2= Employee("merbng",2300)
+#
+# emp1.displayEmployee()
+# emp1.displayCount()
+# emp2.displayCount()
+# emp2.displayEmployee()
+# print "Total Employee %d" % Employee.empCount
+#
+# print "检查是否存在一个属性",hasattr(emp1,"age")
+# print "返回属性的值",getattr(emp1,"name")
+# print "添加属性值",setattr(emp1,"name",'xixixi')
+# print emp1.name
+# print "删除属性",delattr(emp1,'salary')
+
+# Python内置类属性
+# __dict__:类的属性
+# __doc__:类的文档字符串
+# __name__:类名
+# __module__:类定义所在的模块
+# __bases__:累的所有父类构成元素（包含了一个由所有父类构成的元组）
+# class Employee:
+#     "所有员工的基类"
+#     empCount =0
+#     def __init__(self,name,salary):
+#         self.name =name
+#         self.salary=salary
+#         Employee.empCount+=1
+#     def displayCount(self):
+#         print Employee.empCount
+#     def displayEmployee(self):
+#         print self.name+self.salary
+#
+# print "Employee.__doc__",Employee.__doc__
+# print "Employee.__name__",Employee.__name__
+# print "Employee.__bases__",Employee.__bases__
+# print "Employee.__dict__",Employee.__dict__
+
+# python对象销毁(垃圾回收)
+# Python 使用了引用计数这一简单技术来跟踪和回收垃圾。
+# 在 Python 内部记录着所有使用中的对象各有多少引用。
+# 一个内部跟踪变量，称为一个引用计数器。
+# 当对象被创建时， 就创建了一个引用计数， 当这个对象不再需要时，
+# 也就是说， 这个对象的引用计数变为0 时， 它被垃圾回收。
+# 但是回收不是"立即"的， 由解释器在适当的时机，将垃圾对象占用的内存空间回收。
 
 # Python正则表达式
 # 2017-11-18 21:07:51
 # http://www.runoob.com/python/python-reg-expressions.html
+
+# re.search方法，扫描整个字符串并返回第一个成功的匹配
+# re.search(pattern,string,flags=0)  匹配成功re.search方法返回一个匹配的对象，否则返回None。
+
+import re
+# print (re.match('www',"www.baidu.com").span())#在起始位置匹配
+# print (re.match('com',"www.baidu.com"))#不在起始位置匹配
+# (0, 3)
+# None
+
+# line= "Cats are smarter than dogs"
+# matchObj = re.match( r'(.*) are (.*?) .*', line, re.M|re.I)
+# if matchObj:
+#     print "matchObj.group():",matchObj.group()
+#     print "matchObj.group(1):",matchObj.group(1)
+#     print "matchObj.group(2):",matchObj.group(2)
+# else:
+#     print "No match!"
+
+# re.match()与re.search()的区别
+# re.match()只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None
+# re.search()匹配整个字符串，知道找到一个匹配
+
+# line ="Cats are smarter than dogs"
+# matchObj =re.match(r'dogs',line,re.M|re.I)
+# if matchObj:
+#     print "match--->matchObj.group():",matchObj.group()
+# else:
+#     print "No match！"
+# matchObj =re.search(r'dogs',line,re.M|re.I)
+# if  matchObj:
+#     print "search-->matchObj.group():",matchObj.group()
+# else:
+#     print "No match!"
+
+# 检索和替换
+# Python的re模块提供了re.sub用于替换字符串中的匹配项
+# pattenr：正则中的模式字符串
+# repl：替换的字符串，也可为一个函数
+# string要被查找替换的原始字符串
+# count 模式匹配后替换的最大次数，默认0表示替换所有的匹配
+# re.sub(pattern,repl,string,count,flags)
+
+# phone ="2004-323-234"#这是一个国外电话号码
+# # 删除字符串中的Python注释
+# num =re.sub(r'#.*$',"",phone)
+# print "电话号码是：",num
+# # 删除非数字（-）的字符串
+# num= re.sub(r'\D',"",phone)
+# print "电话号码是：",num
+
+# repl参数是一个函数
+# 以下实例中将字符串中的匹配的数字乘于 2：
+# def double(matched):
+#     value = int(matched.group('value'))
+#     return str(value*2)
+#
+# s='A23G4HFD567'
+# print (re.sub('(?P<value>\d+)',double,s))
+
+# 正则表达式修饰符-可选标志
+# re.I :使匹配对大小写敏感
+# re.L: 做本地化识别（locale-aware）匹配
+# re.M :多行匹配，影响^和$
+# re.S :使.匹配包括换行在内的所有字符
+# re.U :根据Unicode字符集解析字符，这个标志影响\w,\W,\b,\B
+# re.X  :该标识通过给予你更灵活的格式以便你将正则表达式写的更易于理解
+
+# 正则表达式模式
+
+# Python CGI编程
 
 
